@@ -1,0 +1,27 @@
+Instalar pyserial
+
+Programar o arduino como uma comunicacao serial comum. No python preparamos o ambiente para uma leitura simples
+ai no futoro podemos avançar na comunicacao
+
+Código no arduino
+
+int pinoLed = 13; //porta do led embutido
+int tmp = 2000;
+
+void setup() {
+  pinMode(pinoLed, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  char leitura = Serial.read();
+  
+  if(leitura == '1'){
+    digitalWrite(pinoLed, 1);
+    Serial.println("LED on");
+  }
+   else if(leitura == '0'){
+     digitalWrite(pinoLed, 0);
+     Serial.println("LED off");
+      }
+  }
